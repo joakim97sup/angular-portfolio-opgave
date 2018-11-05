@@ -1,0 +1,86 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 d-flex justify-content-center mb-5 mt-3">
+			<h2>Dette er min Angular Portfolio</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<p>Denne lille portfolio side er lavet i Angular 6 og stylet med Boostrap som et skoleprojekt som vores første Angular opgave.</p>
+			<hr/>
+		</div>
+		<div class="col-12">
+			<p>Mit navn er Joakim Seneca Uldahl Persson og jeg er en multimediedesign student på mit 3. semester.</p>
+			<hr/>
+		</div>
+		<div class="col-12">
+			<p>Denne portfolio bruger .JSON filformatet til at vise noget data som bruges som et eksempel af hvordan JSON kan bruges i et Angular projekt.</p>
+			<hr/>
+		</div>
+	</div>
+</div>
+<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2>"CV"</h2>
+			</div>
+		</div>
+		  <div class="row"> 
+			<div *ngFor="let info of data ; let i = index" class="border border-dark rounded m-2">	
+				
+				<table class="table-responsive">
+					<table class="table  table-bordered table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">&#9670;</th>
+							<th scope="col">First name</th>
+							<th scope="col">Last name</th>
+							<th scope="col">Gender</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row"></th>
+							<td><p>{{ info.first_name }}</p></td>
+							<td>{{ info.last_name }}</td>
+							<td>{{ info.gender }}</td>
+						</tr>
+					</tbody>
+				</table>
+				</table>
+				
+					
+			
+				<!-- Button trigger modal -->
+		<button type="button" class="btn btn-block btn-success" data-toggle="modal" [attr.data-target]="'#showMore-' + i">
+		  See more data
+		</button>
+		
+		<!-- Modal -->
+		<div class="modal fade" [attr.id]="'showMore-' + i" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalVerticalLabel">More data</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+						<p>Id: {{ info.id }}</p>
+						<p>Ip adress: {{ info.ip_address }}</p>
+						<p>Email: {{ info.email }}</p>
+		
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+				
+			</div>
+			<!-- row: --> 
+		  </div>
+		  <!-- container: --> 
+		</div>
